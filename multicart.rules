@@ -1,0 +1,82 @@
+
+(rules PCB multicart
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 798)
+    (layer_rule Top
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.3)
+    )
+    (layer_rule Bottom
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.7)
+    )
+  )
+  (rule
+    (width 400.0)
+    (clear 200.2)
+    (clear 200.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle Top 800.0 0.0 0.0)
+    )
+    (shape
+      (circle Bottom 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 400.0)
+    )
+    (circuit 
+      (use_layer Top Bottom)
+    )
+  )
+  (class "kicad_default"
+    GND VCC "Net-(J1-Pad14)" "Net-(J1-Pad15)" /A10 "Net-(J1-PadR)" "Net-(J1-PadS)" "Net-(IC3-Pad2)"
+    /A3 /A2 /A1 /A0 /D4 /D5 /D2 /D1
+    /D0 /D6 "Net-(IC3-Pad1)" "Net-(IC2-Pad2)" /A4 /A5 /A6 /A7
+    /A8 /A9 /A12 /D3 /D7 /A11 "Net-(IC2-Pad19)" "Net-(IC2-Pad18)"
+    "Net-(IC2-Pad17)" "Net-(IC2-Pad16)" "Net-(IC1-Pad3)" "Net-(IC2-Pad14)" "Net-(IC2-Pad13)" "Net-(IC1-Pad2)" "Net-(IC2-Pad11)" "Net-(IC2-Pad9)"
+    "Net-(IC2-Pad5)" "Net-(IC2-Pad6)" "Net-(IC2-Pad4)" "Net-(IC2-Pad3)" "Net-(IC2-Pad8)" "Net-(IC2-Pad7)" "Net-(JP1-Pad1)" "Net-(JP2-Pad1)"
+    "Net-(IC1-Pad30)" "Net-(IC1-Pad31)" "Net-(IC1-Pad29)" "Net-(JP4-Pad1)" "Net-(IC1-Pad28)" "Net-(IC1-Pad24)" "Net-(IC1-Pad1)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 400.0)
+    )
+    (circuit 
+      (use_layer Top Bottom)
+    )
+  )
+)
