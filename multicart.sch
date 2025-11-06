@@ -1,5 +1,5 @@
 EESchema Schematic File Version 2
-LIBS:AmigaComponents
+LIBS:RetroBitLab
 LIBS:multicart-cache
 EELAYER 25 0
 EELAYER END
