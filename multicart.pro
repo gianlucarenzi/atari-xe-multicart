@@ -41,4 +41,4 @@ ERC_TestSimilarLabels=1
 version=1
 LibDir=../../../packages/kicad/kicad-footprints;../../../packages/kicad/kicad-packages3D;../../../packages/kicad/kicad-symbols
 [eeschema/libraries]
-LibName1=/home/debian/Progetti/RetroBitLab-Library/AmigaComponents
+LibName1=${HOME}/Progetti/RetroBitLab-Library/RetroBitLab
